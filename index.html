@@ -26,7 +26,7 @@
             margin: 0;
             padding: 0;
             background-color: black;
-            color: white;
+            color: black;
             width: 100%;
             height: 100%;
             overflow-x: hidden;
@@ -201,7 +201,7 @@
 
     <style type="text/css">
         .intro {
-            background: #0E1D62;
+            background: #dbacfa;
             width: 100%;
             height: 100%;
             display: block;
@@ -283,9 +283,9 @@
 
             <center>
                 <ul class="animate__animated animate__pulse animate__infinite">
-                    <li class="material-icons" style=" color: #9bfff7; opacity: 0.3;">keyboard_arrow_down</li>
-                    <li class="material-icons" style=" color: #9bfff7; opacity: 0.6;">keyboard_arrow_down</li>
-                    <li class="material-icons" style=" color: #9bfff7; opacity: 1;">keyboard_arrow_down</li>
+                    <li class="material-icons" style=" color: black; opacity: 0.3;">keyboard_arrow_down</li>
+                    <li class="material-icons" style=" color: black; opacity: 0.6;">keyboard_arrow_down</li>
+                    <li class="material-icons" style=" color: black; opacity: 1;">keyboard_arrow_down</li>
                 </ul>
                 <br>
                 <br>
@@ -303,7 +303,7 @@
 
     <style type="text/css">
         .content {
-            background: #0E1D62;
+            background: #dbacfa;
             width: 100%;
             display: block;
             margin: 0 auto;
@@ -376,7 +376,7 @@
 
 
         <div class="gradient-up"><br><br></div>
-        <img src="fondo.jpg" class="img-responsive"/>
+        <img src="fondo.png" class="img-responsive"/>
         <center>
             <h1 class="min" data-aos="fade-up">Con la compañía de</h1>
         </center>
@@ -419,7 +419,7 @@
         </center>
         <br><br>
 
-        <img src="fondo.jpg" class="img-responsive img-inverse-v"/>
+        <img src="fondo.png" class="img-responsive img-inverse-v"/>
         <div class="gradient-down"><br><br></div>
 
         <img src="segunda.jpg" data-aos="fade-up"class="img-responsive"/>
@@ -428,7 +428,7 @@
 
 
         <div class="gradient-up"><br><br></div>
-        <img src="fondo.jpg" class="img-responsive"/>
+        <img src="fondo.png" class="img-responsive"/>
         <center>
             <h1 class="min" data-aos="fade-up">TE ESPERO EL DÍA</h1>
         </center>
@@ -482,7 +482,7 @@
         </center>
         <br><br>
 
-        <img src="fondo.jpg" class="img-responsive img-inverse-v"/>
+        <img src="fondo.png" class="img-responsive img-inverse-v"/>
         <div class="gradient-down"><br><br></div>
 
         <img src="tercera.jpg" data-aos="fade-up"class="img-responsive"/>
@@ -490,7 +490,7 @@
 
 
         <div class="gradient-up"><br><br></div>
-        <img src="fondo.jpg" class="img-responsive"/>
+        <img src="fondo.png" class="img-responsive"/>
         <center>
 
 
@@ -530,7 +530,7 @@
             <br><br>
 
         </center>
-        <img src="fondo.jpg" class="img-responsive img-inverse-v"/>
+        <img src="fondo.png" class="img-responsive img-inverse-v"/>
 
 
         <div class="gradient-down"><br><br></div>
@@ -542,7 +542,7 @@
 
        
 
-        <img src="fondo.jpg" class="img-responsive"/>
+        <img src="fondo.png" class="img-responsive"/>
         <center>
 
 
@@ -581,7 +581,7 @@
             <br><br>
 
         </center>
-        <img src="fondo.jpg" class="img-responsive img-inverse-v"/>
+        <img src="fondo.png" class="img-responsive img-inverse-v"/>
         <div class="gradient-down"><br><br></div>
 
 
@@ -636,6 +636,7 @@
     <script>
 
         var audio = new Audio('audio.mp3');
+        audio.loop = true;
 
 
 
@@ -744,7 +745,7 @@
         // Evento de clic en la imagen "sello.png"
         document.getElementById("sello").addEventListener("click", function() {
 
-            audio.play();
+            //audio.play();
 
             $(window).scrollTop(0);
 
