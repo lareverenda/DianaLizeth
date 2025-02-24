@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento Básico</title>
+
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+
+        html{
+            width: 100%;
+            height: 100%; 
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+         
+
+
+
+            /*
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            */
+        }
+        *,
+        *::before,
+        *::after {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        .estrella {
+            position: absolute;
+            background-image: url('estrella.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 1;
+            pointer-events: none;
+            animation: pulso 5s infinite, desaparecer 0.5s ease-out forwards;
+        }
+        
+        @keyframes pulso {
+            0% { transform: scale(1); opacity: 1; }
+            10% { transform: scale(2); opacity: 1; }
+        }
+        
+        @keyframes desaparecer {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(1); }
+        }
+
+        .img-responsive{
+            width: 100%;
+            height: auto;
+        }
+
+        .gradient-up{
+            background: linear-gradient(to bottom, transparent, white);
+            opacity: 0.1;
+        }
+
+        .gradient-down{
+            background: linear-gradient(to bottom, white, transparent);
+            opacity: 0.1;
+        }
+
+        .img-inverse-v{
+            transform: rotateX(180deg);
+            transform-origin: center;
+        }
+
+        .text-shadow{
+            text-shadow: 0px 0px 10px rgba(242.69376544944362, 242.69376544944362, 242.69376544944362, 0.88);
+        }
+
+        .btn_border{
+            border: 1px solid white;
+            color: white;
+            background: transparent;
+            border-radius: 70px;
+            padding: 12px 60px;
+            align-items: center;
+            text-decoration: none;
+            gap: 5px;
+            display: inline-flex;
+            font-family: "Fira Sans Condensed", serif;
+        }
+        .btn_border i{
+            color: white;
+        }
+
+        .sombres{
+            box-shadow: rgba(247, 247, 247, 0.98) -1px 0px 10px 0px;
+            border-style: solid;
+            border-width: 3px;
+            border-color: rgb(233, 233, 233);
+        }
+
+        .asi_asi{
+            width: 100%;
+            max-width: 200px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+
+
+    <style>
+
+
+        .sobre {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+        }
+
+        .sobre img {
+            object-fit: fill;
+        }
+
+        .imagen-centrada {
+            max-height: 30%;
+            cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+        }
+
+        .imagen-fondo {
+            position: absolute;
+            width: 70%;
+            height: 100vh;
+            top: 0;
+            object-fit: fill;
+            z-index: -1;
+            transition: transform 1s ease-out;
+        }
+
+        .imagen-fondo.left {
+            left: 0;
+        }
+
+        .imagen-fondo.right {
+            right: 0;
+        }
+        /* Animaciones de desaparición */
+        .ocultar-left {
+            transform: translateX(-100%); /* Desaparece hacia la izquierda */
+        }
+
+        .ocultar-right {
+            transform: translateX(100%); /* Desaparece hacia la derecha */
+        }
+
+
+    </style>
+
+
+    <div class="sobre" id="sobre">
+
+        <img src="sello.png"  class="animate__animated animate__pulse animate__infinite imagen-centrada" id="sello">
+        <!-- Imagen de fondo izquierda que cubre el 50% del ancho y 100% del alto -->
+        <img src="left.png" alt="Imagen de Fondo Izquierda" class="imagen-fondo left" id="left">
+        
+        <!-- Imagen de fondo derecha que cubre el 50% del ancho y 100% del alto -->
+        <img src="right.png" alt="Imagen de Fondo Derecha" class="imagen-fondo right" id="right">
+    </div>
+
+
+
+
+
+
+    <style type="text/css">
+        .intro {
+            background: #0E1D62;
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .intro .title{
+            text-align: center;
+            font-family: "Satisfy", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+        }
+    </style>
+
+    <div class="intro">
+
+
+
+
+
+
+    
+
+        <style type="text/css">
+            .principal {
+                width: 100%;
+                height: 100%;
+                display: block;
+                background-image: url('principal.jpg'); /* Ruta a la imagen de fondo */
+                background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+                background-position: center; /* Centra la imagen de fondo */
+                background-repeat: no-repeat; /* Evita que la imagen se repita */
+            }
+
+            .principal .titulo {
+                display: inline-block;
+                text-align: center;
+                font-family: "Satisfy", serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 45px;
+            }
+
+            .principal .top{
+                font-family: "Fira Sans Condensed", serif;
+                font-size: 20px;
+            }
+
+            .principal center ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: inline-grid;
+            }
+            .principal center ul li {
+                margin-bottom: -10px;
+                font-size: 35px;
+            }
+
+        </style>
+
+        <div class="principal">
+
+            
+
+
+            <div style="height:50px"></div>
+            <center>
+                <div style="display: block;width: 80%;">
+                    <h1 class="animate__animated animate__pulse animate__infinite titulo">Mis XV Años</h1>
+                </div>
+                <div style="display: block;width: 80%;">
+                    <h1 class="animate__animated animate__pulse animate__infinite titulo">Diana Lizeth</h1>
+                </div>
+            </center>
+            <div style="height: calc(100% - 400px);"></div>
+
+            <center>
+                <ul class="animate__animated animate__pulse animate__infinite">
+                    <li class="material-icons" style=" color: #9bfff7; opacity: 0.3;">keyboard_arrow_down</li>
+                    <li class="material-icons" style=" color: #9bfff7; opacity: 0.6;">keyboard_arrow_down</li>
+                    <li class="material-icons" style=" color: #9bfff7; opacity: 1;">keyboard_arrow_down</li>
+                </ul>
+                <br>
+                <br>
+                <h2 class="top">DESLIZA PARA VER LA INVITACIÓN</h2>
+
+            </center>
+    
+
+        </div>
+
+
+    </div>
+
+
+
+    <style type="text/css">
+        .content {
+            background: #0E1D62;
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .content .title{
+            text-align: center;
+            font-family: "Satisfy", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+        }
+
+        .content .top{
+            text-align: center;
+            font-family: "Urbanist", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+        }
+
+
+        .content .grande{
+            text-align: center;
+            font-family: "Urbanist", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 40px;
+        }
+
+
+        .content .super{
+            display: inline-block;
+            text-align: center;
+            font-family: "Satisfy", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 45px;
+        }
+        .content .superBig{
+            display: inline-block;
+            text-align: center;
+            font-family: "Satisfy", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 55px;
+        }
+
+
+        .content .min{
+            text-align: center;
+            font-family: "Urbanist", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+        }
+
+    </style>
+
+    <div class="content">
+
+        <br><br>
+        <center>
+
+
+            <h1 class="title text-shadow" data-aos="fade-up">¡Celebremos juntos <br>mi gran fecha soñada!</h1>
+        </center>
+        <br><br>
+
+
+        <div class="gradient-up"><br><br></div>
+        <img src="fondo.jpg" class="img-responsive"/>
+        <center>
+            <h1 class="min" data-aos="fade-up">Con la compañía de</h1>
+        </center>
+        <br><br>
+        <center>
+            <div style="display: block;width: 80%;">
+                <h1 class="super text-shadow animate__animated animate__pulse animate__infinite">Mis Padres</h1>
+            </div>
+        </center>
+        <br><br>
+        <center>
+            <h1 class="top" data-aos="fade-up">Hugo Meza Temoltzi</h1>
+            <br><br>
+            <h1 class="top" data-aos="fade-up">&</h1>
+            <br><br>
+            <h1 class="top" data-aos="fade-up">Viridiana Meza Garnica</h1>
+        </center>
+        <br><br>
+
+
+        <center>
+            <div style="display: block;width: 80%;">
+                <h1 class="super text-shadow animate__animated animate__pulse animate__infinite">Mis Padrinos</h1>
+            </div>
+        </center>
+        <br><br>
+        <center>
+
+
+            <h1 class="top" data-aos="fade-up">Sergio Meza Ruiz</h1>
+
+
+            <br><br>
+            <h1 class="top" data-aos="fade-up">&</h1>
+            <br><br>
+            <h1 class="top" data-aos="fade-up">Bertha Rivera Cardenas</h1>
+
+            
+
+        </center>
+        <br><br>
+
+        <img src="fondo.jpg" class="img-responsive img-inverse-v"/>
+        <div class="gradient-down"><br><br></div>
+
+        <img src="segunda.jpg" data-aos="fade-up"class="img-responsive"/>
+
+
+
+
+        <div class="gradient-up"><br><br></div>
+        <img src="fondo.jpg" class="img-responsive"/>
+        <center>
+            <h1 class="min" data-aos="fade-up">TE ESPERO EL DÍA</h1>
+        </center>
+
+        <br><br>
+        <center>
+            <h1 class="grande" data-aos="fade-up">5</h1>
+        </center>
+        <br><br>
+        <center>
+            <div style="display: block;width: 80%;">
+                <h1 class="super text-shadow animate__animated animate__pulse animate__infinite">Abril</h1>
+            </div>
+        </center>
+        <br><br>
+        <center>
+            <h1 class="grande" data-aos="fade-up">2025</h1>
+        </center>
+        <br><br>
+
+
+
+
+        <style>
+            #countdown {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+            .time-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .time-container span {
+                font-size: 30px;
+                font-weight: bold;
+            }
+            .time-container p {
+                font-size: 18px;
+                margin: 0;
+            }
+        </style>
+
+
+        <center>
+            <h1 class="min" data-aos="fade-up">FALTAN</h1>
+            <br><br>
+            <div class="min" data-aos="fade-up" id="countdown"></div>
+        </center>
+        <br><br>
+
+        <img src="fondo.jpg" class="img-responsive img-inverse-v"/>
+        <div class="gradient-down"><br><br></div>
+
+        <img src="tercera.jpg" data-aos="fade-up"class="img-responsive"/>
+
+
+
+        <div class="gradient-up"><br><br></div>
+        <img src="fondo.jpg" class="img-responsive"/>
+        <center>
+
+
+            <h1 class="min" data-aos="fade-up">MISA</h1>
+            <br>
+
+            <img src="misa.jpg" data-aos="fade-up" class="sombres asi_asi" />
+
+        </center>
+
+        <br><br>
+
+        <center>
+            <div style="display: block;width: 80%;">
+                <h1 class="super text-shadow animate__animated animate__pulse animate__infinite">Parroquia de</h1>
+                <h1 class="super text-shadow animate__animated animate__pulse animate__infinite">Santo Toribio</h1>
+            </div>
+        </center>
+        <br><br>
+
+
+        <center>
+            <h1 class="min" data-aos="fade-up">Carretera puebla - tlaxcala <br>Santo Toribio Xicohtzinco</h1>
+        </center>
+
+
+        <br><br>
+        <center>
+            <h1 class="grande" data-aos="fade-up">6:00 P.M.</h1>
+        </center>
+        <br><br>
+        <center>
+
+            <a class="btn_border" data-aos="fade-up" href="https://maps.app.goo.gl/eyUmztTStMvCaAKm7" target="_blank">
+                VER EN MAPA <i class="material-icons">location_on</i>
+            </a>
+            <br><br>
+
+        </center>
+        <img src="fondo.jpg" class="img-responsive img-inverse-v"/>
+
+
+        <div class="gradient-down"><br><br></div>
+        <img src="cuarta.jpg" data-aos="fade-up"class="img-responsive"/>
+        <div class="gradient-up"><br><br></div>
+
+        
+
+
+       
+
+        <img src="fondo.jpg" class="img-responsive"/>
+        <center>
+
+
+            <h1 class="min" data-aos="fade-up">RECEPCIÓN</h1>
+            <br>
+
+            <img src="recepcion.png" data-aos="fade-up" class="sombres asi_asi" />
+
+        </center>
+
+        <br><br>
+
+        <center>
+            <div style="display: block;width: 80%;">
+                <h1 class="super text-shadow animate__animated animate__pulse animate__infinite">Salon Alejandra</h1>
+            </div>
+        </center>
+        <br><br>
+
+
+        <center>
+            <h1 class="min" data-aos="fade-up">Calle lazaro cardenas sur 14<br> barrio de guardia #90740<br>Zacatelco Tlaxcala</h1>
+        </center>
+
+
+        <br><br>
+        <center>
+            <h1 class="grande" data-aos="fade-up">6:00 P.M.</h1>
+        </center>
+        <br><br>
+        <center>
+
+            <a class="btn_border" data-aos="fade-up" href="https://maps.app.goo.gl/RkyFFD4QiWSNKVSFA" target="_blank">
+                VER EN MAPA <i class="material-icons">location_on</i>
+            </a>
+            <br><br>
+
+        </center>
+        <img src="fondo.jpg" class="img-responsive img-inverse-v"/>
+        <div class="gradient-down"><br><br></div>
+
+
+
+        <style type="text/css">
+            video{
+                margin: 0 auto;
+                display: block;
+                width: 100%;
+                max-width: 450px;
+            }
+        </style>
+
+
+        <br><br>
+        <video class="sombres" src="video.mp4" autoplay loop muted="muted" playsinline controlslist="nodownload"></video>
+        <br><br>
+
+
+        <center>
+            <div style="display: block;width: 80%;">
+                <h1 class="superBig text-shadow animate__animated animate__pulse animate__infinite">¡Te espero!</h1>
+            </div>
+        </center>
+        <br><br>
+
+
+        <center>
+            <a class="btn_border" data-aos="fade-up" href="https://wa.me/2213985902?text=Hola,%20quiero%20confirmar%20mi%20asistencia" target="_blank" style="align-items:center;">
+                <img src="wat.svg" alt="Icono" style="width: 24px; height: 24px;">
+                <span>CONFIRMAR ASISTENCIA</span>
+            </a>
+        </center>
+
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+
+
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countdown/2.6.0/countdown.min.js"></script>
+
+
+
+    <script>
+
+        var audio = new Audio('audio.mp3');
+
+
+
+
+        var targetDate = new Date("Apr 5, 2025 08:00:00").getTime();
+        var countdownTimer = countdown(
+            targetDate,
+            function(ts) {
+                var countdownText = `
+                    <div class="time-container">
+                        <span>${ts.days}</span>
+                        <p>días</p>
+                    </div>
+                    <div class="time-container">
+                        <span>${ts.hours}</span>
+                        <p>horas</p>
+                    </div>
+                    <div class="time-container">
+                        <span>${ts.minutes}</span>
+                        <p>minutos</p>
+                    </div>
+                    <div class="time-container">
+                        <span>${ts.seconds}</span>
+                        <p>segundos</p>
+                    </div>
+                `;
+
+
+                document.getElementById("countdown").innerHTML = countdownText;
+            },
+            countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS
+        );
+
+
+    
+        function crearEstrella() {
+            let estrella = document.createElement("img");
+            estrella.src = "estrella.png";
+            estrella.classList.add("estrella");
+    
+      
+            let tamaño = Math.random() * (30 - 10) + 10; 
+            estrella.style.width = `${tamaño}px`;
+            estrella.style.height = `${tamaño}px`;
+        
+            let viewportY = window.scrollY;
+     
+            let contenedor = document.querySelector(".principal");
+            if (!contenedor) return;
+        
+            let rect = contenedor.getBoundingClientRect();
+
+            let margenX = rect.width * 0.1;
+        
+            let viewportWidth = rect.width;
+
+            let posX = rect.left + scrollX + margenX + Math.random() * (rect.width - 2 * margenX);
+
+
+            estrella.style.left = `${posX}px`;
+
+
+            let viewportHeight = window.innerHeight;
+            let scrollTop = window.scrollY;  
+            
+            let maxY = viewportHeight * 0.9 + scrollTop;  
+            
+            estrella.style.top = `${Math.random() * (maxY - scrollTop) + scrollTop}px`;
+
+
+
+            //estrella.style.top = `${Math.random() * maxY}px`;
+
+            //estrella.style.top = `${viewportY + Math.random() * viewportHeight}px`;
+
+            document.body.appendChild(estrella);
+        
+            setTimeout(() => {
+                estrella.remove();
+            }, 3000);
+        }
+
+
+
+
+
+        AOS.init();
+
+
+        
+        $(document).ready(function() {
+        
+        
+        
+            $(window).scrollTop(0);
+        
+        
+        
+        });
+
+
+
+
+        new WOW().init();
+
+        // Evento de clic en la imagen "sello.png"
+        document.getElementById("sello").addEventListener("click", function() {
+
+            //audio.play();
+
+            //$(window).scrollTop(0);
+
+            // Añadir animaciones de salida
+            document.getElementById("left").classList.add("animate__animated", "animate__slideOutLeft");
+            document.getElementById("right").classList.add("animate__animated", "animate__slideOutRight");
+
+            document.getElementById("sello").classList.remove("animate__infinite","animate__pulse");
+            document.getElementById("sello").classList.add("animate__animated", "animate__fadeOut");
+
+
+            setTimeout(function() {
+                document.getElementById("sobre").style.display = "none";
+            }, 800);
+
+
+            setInterval(crearEstrella,300);
+
+
+        });
+
+        /*document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });*/
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
